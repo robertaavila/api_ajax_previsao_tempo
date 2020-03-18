@@ -1,0 +1,82 @@
+body{
+    background-color: #9cc2ff;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+@font-face {
+    font-family: Montserrat-ExtraBold;
+    src: url('montserrat/Montserrat-ExtraBold.ttf ') format('truetype');
+}
+
+@font-face {
+    font-family: Montserrat-medium;
+    src: url('montserrat/Montserrat-Medium.ttf ') format('truetype');
+}
+
+@font-face {
+    font-family: Montserrat-light;
+    src: url('montserrat/Montserrat-Light.ttf ') format('truetype');
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url('montserrat/Montserrat-Bold.ttf ') format('truetype');
+}
+
+@font-face {
+    font-family: Montserrat-SemiBold;
+    src: url('montserrat/Montserrat-SemiBold.ttf ') format('truetype');
+}
+
+h1{
+    font-family: "Montserrat-Extrabold";
+    font-size: 5vw;
+    line-height: 5.5vw;
+    display: flex;
+}
+
+label{
+    font-family: "Montserrat-Semibold";
+    font-size: 3vw;
+    margin-right: 2vw;
+}
+
+.titulo{
+    font-family: "Montserrat-Semibold";
+    font-size: 2vw;
+    line-height: 2.5vw;
+    align: right;
+    padding: 1vw;
+}
+
+th{
+    font-family: "Montserrat-Semibold";
+    font-size: 2vw;
+    line-height: 2.5vw;
+    align: right;
+    padding: 1vw;
+}
+
+td{
+    font-family: "Montserrat-medium";
+    font-size: 1.8vw;
+    padding: 1vw;
+}
+
+.tabela{
+    margin: 5vw;
+}
+
+.lateral{
+    margin: 0 3vw 0 3vw;;
+}
+
+button{
+    margin-left: 5vw;
+}
