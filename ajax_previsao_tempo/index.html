@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="estilo.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>
+        Previsão do tempo
+    </h1>
+</div>
+<div class="container tabela">
+    <label for="cidade_opcao">Escolha uma cidade: </label>
+    <select id="cidade_opcao">
+        <option value="São Paulo" id="sampa">São Paulo</option>
+        <option value="Rio de Janeiro" id="rio">Rio de Janeiro</option>
+        <option value="Florianópolis" id="floripa">Florianópolis</option>
+        <option value="Porto Alegre" id="poa">Porto Alegre</option>
+    </select>
+    <button type="button" onclick="carregarDados()">Consultar</button>
+</div>
+<div class="container">
+<p id="1" style="font-family: Montserrat-SemiBold; font-size: 2vw" >
+
+</p>
+</div>
+<div class="container">
+    <table id="demo"> </table>
+</div>
+<script>
+    function carregarDados() {
+        var valorUrl = "";
+        controle = document.getElementById("cidade_opcao").value;
+        document.getElementById(1).innerHTML = "Previsão do tempo para: " + controle;
+        if (controle == "Sãp Paulo") {
+            valorUrl = "http://servicos.cptec.inpe.br/XML/cidade/244/previsao.xml";
+        }
+        if (controle == "Rio de Janeiro") {
+            valorUrl = "http://servicos.cptec.inpe.br/XML/cidade/241/previsao.xml";
+        }
+        if (controle == "Porto Alegre") {
+            valorUrl = "http://servicos.cptec.inpe.br/XML/cidade/237/previsao.xml";
+        }
+        if (controle == "Florianópolis") {
+            valorUrl = "http://servicos.cptec.inpe.br/XML/cidade/228/previsao.xml";
+        }
+
+        var xhttp = new XMLHttpRequest();
+        url = valorUrl;
+        xhttp.open("GET", (url), true);
+        xhttp.send();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        }
+
+        function myFunction(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            var table="<tr><th>Dia</th><th>Tempo</th><th>Temperatura máxima</th><th>Temperatura mínima</th><th>iuv</th></tr>";
+            var x = xmlDoc.getElementsByTagName("previsao");
+            for (i = 0; i <x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("dia")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("tempo")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("maxima")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("minima")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("iuv")[0].childNodes[0].nodeValue +
+                    "</td></tr>";
+            }
+            document.getElementById("demo").innerHTML = table;
+        }
+    }
+
+</script>
+
+</body>
+</html>
