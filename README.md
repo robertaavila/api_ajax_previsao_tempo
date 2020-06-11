@@ -1,16 +1,6 @@
-# programacao_web
-Pasta para os exercícios da disciplina programação web
+# API desenvolvida em Ajax 
 
-
-App de uma página com os dados de um café.
-
-Atividade desenvolvida durante o curso da Udacity - Android Basics, concluído em 05/05/2019.
-
-# udacity-android-cafe-deli
-
-App de uma página com os dados de um café.
-
-Atividade desenvolvida durante o curso da Udacity - Android Basics, concluído em 05/05/2019.
+O objetivo deste projeto era utilizar ajax para fazer requisições para a API do CPTEC INPE e atualizar dinamicamente dados de previsão do tempo, conforme a seleção da cidade. 
 
 <p align="center">
   <img src="api_previsao.png" width="350" title="hover text">
