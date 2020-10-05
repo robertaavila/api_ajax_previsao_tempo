@@ -2,40 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Previsão do tempo - CPTEC/INPE</title>
     <link href="estilo.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 </head>
 <body>
 <div class="container">
-    <h1>
+    <h1 id="titulo" class="header_before_search">
         Previsão do tempo
     </h1>
+</div>
+<div class="container">
+    <table id="tabela" class="hidden"> </table>
 </div>
 <div class="container tabela">
     <label for="cidade_opcao">Escolha uma cidade: </label>
     <select id="cidade_opcao">
+        <option value="Florianópolis" id="floripa">Florianópolis</option>
         <option value="São Paulo" id="sampa">São Paulo</option>
         <option value="Rio de Janeiro" id="rio">Rio de Janeiro</option>
-        <option value="Florianópolis" id="floripa">Florianópolis</option>
         <option value="Porto Alegre" id="poa">Porto Alegre</option>
     </select>
-    <button type="button" onclick="carregarDados()">Consultar</button>
+    <button type="button" onclick="carregarDados()">consultar</button>
 </div>
-<div class="container">
-<p id="1" style="font-family: Montserrat-SemiBold; font-size: 2vw" >
 
-</p>
-</div>
-<div class="container">
-    <table id="demo"> </table>
-</div>
+
 <script>
     function carregarDados() {
         var valorUrl = "";
         controle = document.getElementById("cidade_opcao").value;
-        document.getElementById(1).innerHTML = "Previsão do tempo para: " + controle;
-        if (controle == "Sãp Paulo") {
+        if (controle == "São Paulo") {
             valorUrl = "http://servicos.cptec.inpe.br/XML/cidade/244/previsao.xml";
         }
         if (controle == "Rio de Janeiro") {
@@ -55,28 +51,50 @@
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 myFunction(this);
+                document.getElementById("titulo").innerHTML = "Previsão do tempo para " + controle;
+                var element = document.getElementById("tabela");
+                element.classList.remove("hidden");
+                var element = document.getElementById("titulo");
+                element.classList.remove("header_before_search");
+                element.classList.add("header_after_search");
+            } else {
+                console.log(this.status);
             }
         }
 
         function myFunction(xml) {
             var i;
             var xmlDoc = xml.responseXML;
-            var table="<tr><th>Dia</th><th>Tempo</th><th>Temperatura máxima</th><th>Temperatura mínima</th><th>iuv</th></tr>";
+            var data;
+            var arrayData = [];
+            var table="<tr>" +
+                "<th></th>" +
+                "<th>Data</th>" +
+                "<th>Temperatura <br>mínima</th>" +
+                "<th>Temperatura <br>máxima</th>" +
+                "<th>Índice UV</th></tr>";
             var x = xmlDoc.getElementsByTagName("previsao");
             for (i = 0; i <x.length; i++) {
-                table += "<tr><td>" +
-                    x[i].getElementsByTagName("dia")[0].childNodes[0].nodeValue +
-                    "</td><td>" +
+                data = x[i].getElementsByTagName("dia")[0].childNodes[0].nodeValue
+                arrayData = data;
+                data = arrayData[8] + arrayData[9] + "/" + arrayData[5] +  arrayData[6];
+                console.log(arrayData[8],arrayData[9],"/",arrayData[5], arrayData[6]);
+
+                table += "<tr>" +
+                    "<td>" +
                     x[i].getElementsByTagName("tempo")[0].childNodes[0].nodeValue +
                     "</td><td>" +
-                    x[i].getElementsByTagName("maxima")[0].childNodes[0].nodeValue +
+                    data +
                     "</td><td>" +
                     x[i].getElementsByTagName("minima")[0].childNodes[0].nodeValue +
                     "</td><td>" +
+                    x[i].getElementsByTagName("maxima")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
                     x[i].getElementsByTagName("iuv")[0].childNodes[0].nodeValue +
                     "</td></tr>";
+
             }
-            document.getElementById("demo").innerHTML = table;
+            document.getElementById("tabela").innerHTML = table;
         }
     }
 
