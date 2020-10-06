@@ -7,6 +7,10 @@
     src: url('montserrat/Montserrat-SemiBold.ttf ') format('truetype');
 }
 
+.teste{
+    /*display: inline;*/
+}
+
 .container {
     display: flex;
     flex-direction: row;
@@ -31,7 +35,7 @@ h1#titulo.header_after_search{
 
 label{
     font-family: "Montserrat-SemiBold";
-    font-size: 3vh;
+    font-size: 2.5vh;
     margin-right: 2vw;
 }
 
@@ -42,13 +46,14 @@ p{
 
 table{
     border: 1px solid black;
-    border-spacing: 2vw;
+    border-spacing: 5vh;
     border-radius: 2vw;
+    max-width: 50%;
 }
 
 th{
     font-family: "Montserrat-Semibold";
-    font-size: 3vh;
+    font-size: 2.5vh;
     line-height: 3.5vh;
     align: center;
     padding: 0 2vw;
@@ -56,9 +61,13 @@ th{
 
 td{
     font-family: "Montserrat-medium";
-    font-size: 3vh;
+    /*font-size: 3vh;*/
     text-align: center;
     padding: 1.5vh 1vw;
+}
+
+tr{
+    border: 1px solid black;
 }
 
 .tabela{
