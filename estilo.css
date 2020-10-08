@@ -1,0 +1,344 @@
+@font-face {
+    font-family: Montserrat-medium;
+    src: url('montserrat/Montserrat-Medium.ttf ') format('truetype');
+}
+@font-face {
+    font-family: Montserrat-SemiBold;
+    src: url('montserrat/Montserrat-SemiBold.ttf ') format('truetype');
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-around;
+}
+
+#button{
+    margin: 1vh 2vw;
+}
+
+.hidden{
+    display: none;
+}
+
+h1#titulo.header_before_search{
+    margin-top: 14vh;
+    font-family: "Montserrat-SemiBold";
+    font-size: 5vh;
+    line-height: 5.5vh;
+}
+
+h1#titulo.header_after_search{
+    font-family: "Montserrat-SemiBold";
+    font-size: 4vh;
+    line-height: 3.5vh;
+    margin-bottom: 5vh;
+    margin-top: 7vh;
+}
+
+label{
+    font-family: "Montserrat-SemiBold";
+    font-size: 2.5vh;
+    margin-right: 2vw;
+    margin-top: 1vh;
+}
+
+p{
+   font-family: "Montserrat-SemiBold";
+   font-size: 3vh;
+}
+
+.select-button {
+    /*height: 30px;*/
+    /*padding: 2px 4px;*/
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+table{
+    border: 1px solid black;
+    border-spacing: 5vh;
+    border-radius: 2vw;
+    max-width: 50%;
+    margin-top: 3vh;
+}
+
+.tabela{
+
+}
+
+th{
+    font-family: "Montserrat-Semibold";
+    font-size: 2.5vh;
+    line-height: 3.5vh;
+    align: center;
+    padding: 0 2vw;
+}
+
+td{
+    font-family: "Montserrat-medium";
+    /*font-size: 3vh;*/
+    text-align: center;
+    padding: 1.5vh 1vw;
+}
+
+tr{
+    border: 1px solid black;
+}
+
+/*ANIMACOES DA IMAGEM RAIN*/
+
+.animation_drop_rain {
+    animation: hideshow 2s ease infinite;
+}
+
+@keyframes hideshow {
+    0% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.animation_drop_rain1 {
+    animation: hideshow1 2s ease infinite;
+}
+
+@keyframes hideshow1 {
+    0% { opacity: 0; }
+    20% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.animation_drop_rain2 {
+    animation: hideshow2 2s ease infinite;
+}
+
+@keyframes hideshow2 {
+    0% { opacity: 1; }
+    20% { opacity: 0; }
+    40% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.animation_drop_rain3 {
+    animation: hideshow3 2s ease infinite;
+}
+
+@keyframes hideshow3 {
+    0% { opacity: 1; }
+    40% { opacity: 0; }
+    60% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.animation_drop_rain4 {
+    animation: hideshow4 2s ease infinite;
+}
+
+@keyframes hideshow4 {
+    0% { opacity: 1; }
+    60% { opacity: 0; }
+    80% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/*ANIMACAO CHUVA*/
+
+.animation_raining {
+    animation: hideshow 2s ease infinite;
+}
+
+@keyframes hideshow {
+    0% { opacity: 1; }
+    25% { opacity: 1; }
+    50% { opacity: 0; }
+    75% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.animation_raining1 {
+    animation: hideshow1 2s ease infinite;
+}
+
+@keyframes hideshow1 {
+    0% { opacity: 0; }
+    50% { opacity: 0; }
+    55% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+/*ANIMACAO SOL*/
+
+.animation_sun {
+    animation: sun 25s linear infinite;
+}
+
+
+@keyframes sun {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*ANIMACAO NUBLADO*/
+
+.animation_cloud {
+    animation: cloud 20s linear infinite;
+    transform: scale(0.95);
+}
+
+
+@keyframes cloud {
+    0%{
+        transform: translateY(50px);
+    }
+    50% {
+        transform:  translateX(200px);
+    }
+    100%{
+        transform: translateY(50px);
+    }
+
+}
+
+.animation_cloud2 {
+    animation: cloud2 0.1s linear;
+
+}
+
+@keyframes cloud2 {
+    100% {
+        transform: translateY(-50px);
+        transform: translateX(-30px);
+        transform: scale(1.1);
+    }
+}
+
+/*ANIMACAO TEMPESTADE*/
+
+.lightning {
+    stroke: #fca827;
+    stroke-width: 1px;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+    animation: lightning 10s ease-in infinite;
+}
+
+@keyframes lightning {
+    0% {
+        opacity: 0;
+    }
+    4% {
+        opacity: 1;
+        stroke-dashoffset: 50;
+    }
+    7% {
+        stroke-dashoffset: 100;
+    }
+    8% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/*ANIMACAO FLOCOS DE NEVE*/
+
+.animation_drop_snow {
+    animation: snow 7s ease-in infinite;
+}
+
+@keyframes snow {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    25% { opacity: 1; }
+    30% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.animation_drop_snow1 {
+    animation: snow1 7s ease-in infinite;
+}
+
+@keyframes snow1 {
+    0% { opacity: 1; }
+    40% { opacity: 0}
+    100% { opacity: 1; }
+}
+.animation_drop_snow2 {
+    animation: snow2 7s ease-in infinite;
+}
+
+@keyframes snow2 {
+    0% { opacity: 1; }
+    20% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+.animation_drop_snow3 {
+    animation: snow3 7s ease infinite;
+}
+
+@keyframes snow3 {
+    0% { opacity: 1; }
+    60% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.animation_drop_snow4 {
+    animation: snow4 7s ease infinite;
+}
+
+@keyframes snow4 {
+    0% { opacity: 1; }
+    80% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/*ANIMACAO BONECO DE NEVE*/
+
+.snowman {
+    animation: snowman 2s ease-in;
+}
+
+@keyframes snowman {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.snowman1 {
+
+    animation: snowman1 3s ease-in;
+}
+
+@keyframes snowman1 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.snowman2 {
+
+    animation: snowman2 1s ease-in;
+}
+
+@keyframes snowman2 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
