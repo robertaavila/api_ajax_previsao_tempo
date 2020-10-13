@@ -12,10 +12,6 @@ Para instalar o projeto basta fazer o download da pasta e abrir a página no nav
 
 </div>
 
-Você também pode ver a página funcionando em:
-
-
-
 Este projeto foi realizado em JavaScript Vanilla, sem o uso de frameworks ou bibliotecas, por isso não é necessária a instalação de nenhuma dependência para sua visualização. 
 
 ## Contribuições
